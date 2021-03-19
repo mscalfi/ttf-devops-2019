@@ -1,2 +1,3 @@
 Local: docker-compose -f docker-compose-infrastructure.yml -f docker-compose-local.yml up
-Test: docker-compose -f docker-compose-infrastructure.yml -f docker-compose-test.yml up -d
+Test: docker-compose -f docker-compose-infrastructure.yml -f docker-compose-test.yml up
+Prod: docker-compose -f docker-compose-infrastructure-prod.yml -f docker-compose-prod.yml up
