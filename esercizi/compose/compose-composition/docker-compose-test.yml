@@ -30,4 +30,4 @@ services:
     restart: on-failure
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.web-ui.rule=Host(vagrantbox.local)"
+      - "traefik.http.routers.web-ui.rule=Host(`vagrantbox.local`)"
