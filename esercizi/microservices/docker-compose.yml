@@ -1,0 +1,32 @@
+version: '3'
+services:
+  reverse-proxy:
+    image: traefik
+    command: --api.insecure=true --providers.docker --providers.docker.exposedByDefault=false
+    restart: "no"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#  <microservice-example-name>:
+#    build: <microservice-example-name>
+#    restart: "no"
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.routers.<microservice-example-name>.rule=PathPrefix(`/<microservice-example-name>`)"
+#      - "traefik.http.routers.<microservice-example-name>.middlewares=<microservice-example-name>-stripprefix"
+#      - "traefik.http.services.<microservice-example-name>.loadbalancer.server.port=3000"
+#      - "traefik.http.middlewares.<microservice-example-name>-stripprefix.stripprefix.prefixes=/<microservice-example-name>"
+
+  hex-service:
+    build: hex-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hex-service.rule=PathPrefix(`/hex-service`)"
+      - "traefik.http.routers.hex-service.middlewares=hex-service-stripprefix"
+      - "traefik.http.services.hex-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.hex-service-stripprefix.stripprefix.prefixes=/hex-service"
+
