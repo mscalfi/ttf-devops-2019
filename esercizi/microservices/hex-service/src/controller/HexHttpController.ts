@@ -1,6 +1,6 @@
-import {hexToHSL, hexToRGB} from '../service/HexService'; 
+import {hexToCMYK, hexToHSL, hexToRGB} from '../service/HexService'; 
 import {Express} from 'express';
-import { TtfHex, TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
+import { TtfCmyk, TtfHex, TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
 
 class HexHttpController {
     constructor(server: Express) {
@@ -14,6 +14,13 @@ class HexHttpController {
         server.get('/hex/toHSL', (req, res) => {
             const color = JSON.parse(req.query.color as string) as TtfHex;
             const convertedColor: TtfHsl = hexToHSL(color);
+
+            res.send(convertedColor);
+        });
+
+        server.get('/hex/toCMYK', (req, res) => {
+            const color = JSON.parse(req.query.color as string) as TtfHex;
+            const convertedColor: TtfCmyk = hexToCMYK(color);
 
             res.send(convertedColor);
         });

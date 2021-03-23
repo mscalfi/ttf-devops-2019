@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import { hex2hslTestData, hex2rgbTestData } from '../../../commons/src/test-data/colors';
+import { hex2cmykTestData, hex2hslTestData, hex2rgbTestData } from '../../../commons/src/test-data/colors';
 import * as config from '../../server-config.json'
 
 chai.config.includeStack = true;
@@ -34,6 +34,20 @@ describe('hex service REST API Test', () => {
                     should.not.exist(err);
                     res.should.have.status(200);
                     res.body.should.deep.equal(test.hslValue);
+                    done();
+                });
+        });
+    });
+
+    hex2cmykTestData.forEach((test) => {
+        it(`should convert via API ${JSON.stringify(test.hexValue)} to ${JSON.stringify(test.cmykValue)}`, (done) => {
+            chai.request(url)
+                .get('/hex/toCMYK')
+                .query(`color=${JSON.stringify(test.hexValue)}`)
+                .end((err, res) => {
+                    should.not.exist(err);
+                    res.should.have.status(200);
+                    res.body.should.deep.equal(test.cmykValue);
                     done();
                 });
         });
