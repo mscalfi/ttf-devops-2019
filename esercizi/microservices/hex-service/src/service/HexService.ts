@@ -1,5 +1,5 @@
 import colorConverter from 'color-convert'
-import { TtfHex, TtfHsl, TtfRgb } from "../../../commons/src/model/Color"
+import { TtfCmyk, TtfHex, TtfHsl, TtfRgb } from "../../../commons/src/model/Color"
 
 export const hexToRGB = (color: TtfHex): TtfRgb => {
     const converted = colorConverter.hex.rgb(color.hex);
@@ -15,6 +15,16 @@ export const hexToHSL = (color: TtfHex): TtfHsl => {
     return {
         hue: converted[0],
         saturation: converted[1],
-        lightness: converted[2]        
+        lightness: converted[2]
+    }
+}
+
+export const hexToCMYK = (color: TtfHex): TtfCmyk => {
+    const converted = colorConverter.hex.cmyk(color.hex);
+    return {
+        cyan: converted[0],
+        magenta: converted[1],
+        yellow: converted[2],
+        black: converted[3]
     }
 }

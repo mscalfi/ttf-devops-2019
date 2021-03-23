@@ -1,7 +1,7 @@
 import chai from 'chai';
-import { hexToHSL, hexToRGB } from './HexService';
-import { hex2rgbTestData, hex2hslTestData } from "../../../commons/src/test-data/colors"
-import { TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
+import { hexToCMYK, hexToHSL, hexToRGB } from './HexService';
+import { hex2rgbTestData, hex2hslTestData, hex2cmykTestData } from "../../../commons/src/test-data/colors"
+import { TtfCmyk, TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
 chai.config.includeStack = true;
 const should = chai.should();
 
@@ -14,7 +14,7 @@ describe('hex converter test', () => {
                 green: converted.green,
                 blue: converted.blue
             };
-            
+
             rgb.should.deep.equals(test.rgbValue);
         });
     });
@@ -29,6 +29,20 @@ describe('hex converter test', () => {
             };
 
             hsl.should.deep.equals(test.hslValue);
+        });
+    });
+
+    hex2cmykTestData.forEach((test) => {
+        it(`convert ${JSON.stringify(test.hexValue)} to ${JSON.stringify(test.cmykValue)}`, () => {
+            const converted = hexToCMYK(test.hexValue)
+            const cmyk: TtfCmyk = {
+                cyan: converted.cyan,
+                magenta: converted.magenta,
+                yellow: converted.yellow,
+                black: converted.black
+            }
+
+            cmyk.should.deep.equals(test.cmykValue);
         });
     });
 });

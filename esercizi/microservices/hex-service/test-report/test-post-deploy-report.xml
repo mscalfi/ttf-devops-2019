@@ -1,8 +1,8 @@
 <testsuites name="Mocha Tests">
-  <testsuite name="hex converter test" tests="18" errors="0" failures="0" skipped="0" timestamp="2021-03-23T14:02:38" time="0.013">
+  <testsuite name="hex converter test" tests="27" errors="0" failures="0" skipped="0" timestamp="2021-03-23T14:07:31" time="0.016">
     <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0000&quot;} to {&quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:0}" time="0.001">
     </testcase>
-    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FFBF00&quot;} to {&quot;red&quot;:255,&quot;green&quot;:191,&quot;blue&quot;:0}" time="0">
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FFBF00&quot;} to {&quot;red&quot;:255,&quot;green&quot;:191,&quot;blue&quot;:0}" time="0.001">
     </testcase>
     <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;80FF00&quot;} to {&quot;red&quot;:128,&quot;green&quot;:255,&quot;blue&quot;:0}" time="0">
     </testcase>
@@ -32,9 +32,27 @@
     </testcase>
     <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;8000FF&quot;} to {&quot;hue&quot;:270,&quot;saturation&quot;:100,&quot;lightness&quot;:50}" time="0">
     </testcase>
-    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF00BF&quot;} to {&quot;hue&quot;:315,&quot;saturation&quot;:100,&quot;lightness&quot;:50}" time="0.001">
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF00BF&quot;} to {&quot;hue&quot;:315,&quot;saturation&quot;:100,&quot;lightness&quot;:50}" time="0">
     </testcase>
     <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0040&quot;} to {&quot;hue&quot;:345,&quot;saturation&quot;:100,&quot;lightness&quot;:50}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0000&quot;} to {&quot;cyan&quot;:0,&quot;magenta&quot;:100,&quot;yellow&quot;:100,&quot;black&quot;:0}" time="0.001">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FFBF00&quot;} to {&quot;cyan&quot;:0,&quot;magenta&quot;:25,&quot;yellow&quot;:100,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;80FF00&quot;} to {&quot;cyan&quot;:50,&quot;magenta&quot;:0,&quot;yellow&quot;:100,&quot;black&quot;:0}" time="0.001">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;00FF40&quot;} to {&quot;cyan&quot;:100,&quot;magenta&quot;:0,&quot;yellow&quot;:75,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;00FFFF&quot;} to {&quot;cyan&quot;:100,&quot;magenta&quot;:0,&quot;yellow&quot;:0,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;0040FF&quot;} to {&quot;cyan&quot;:100,&quot;magenta&quot;:75,&quot;yellow&quot;:0,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;8000FF&quot;} to {&quot;cyan&quot;:50,&quot;magenta&quot;:100,&quot;yellow&quot;:0,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF00BF&quot;} to {&quot;cyan&quot;:0,&quot;magenta&quot;:100,&quot;yellow&quot;:25,&quot;black&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0040&quot;} to {&quot;cyan&quot;:0,&quot;magenta&quot;:100,&quot;yellow&quot;:75,&quot;black&quot;:0}" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
