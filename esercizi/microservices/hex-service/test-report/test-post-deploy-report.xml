@@ -1,0 +1,22 @@
+<testsuites name="Mocha Tests">
+  <testsuite name="hex converter test" tests="9" errors="0" failures="0" skipped="0" timestamp="2021-03-23T13:54:01" time="0.008">
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0000&quot;} to {&quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:0}" time="0.001">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FFBF00&quot;} to {&quot;red&quot;:255,&quot;green&quot;:191,&quot;blue&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;80FF00&quot;} to {&quot;red&quot;:128,&quot;green&quot;:255,&quot;blue&quot;:0}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;00FF40&quot;} to {&quot;red&quot;:0,&quot;green&quot;:255,&quot;blue&quot;:64}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;00FFFF&quot;} to {&quot;red&quot;:0,&quot;green&quot;:255,&quot;blue&quot;:255}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;0040FF&quot;} to {&quot;red&quot;:0,&quot;green&quot;:64,&quot;blue&quot;:255}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;8000FF&quot;} to {&quot;red&quot;:128,&quot;green&quot;:0,&quot;blue&quot;:255}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF00BF&quot;} to {&quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:191}" time="0">
+    </testcase>
+    <testcase classname="hex converter test" name="convert {&quot;hex&quot;:&quot;FF0040&quot;} to {&quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:64}" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
