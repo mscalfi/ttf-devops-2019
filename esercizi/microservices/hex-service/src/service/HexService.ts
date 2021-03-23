@@ -10,3 +10,11 @@ export const hexToRGB = (color: TtfHex): TtfRgb => {
     }
 }
 
+export const hexToHSL = (color: TtfHex): TtfHsl => {
+    const converted = colorConverter.hex.hsl(color.hex);
+    return {
+        hue: converted[0],
+        saturation: converted[1],
+        lightness: converted[2]        
+    }
+}
