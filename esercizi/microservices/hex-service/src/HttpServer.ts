@@ -1,8 +1,8 @@
-import HttpController from './controller/HexHttpController';
+import HexHttpController from './controller/HexHttpController';
 import express from 'express';
 import * as config from '../server-config.json'
 
-class HexHttpServer {
+class HttpServer {
     constructor() {
         const server = express();
 
@@ -13,10 +13,10 @@ class HexHttpServer {
             next();
         });
 
-        new HttpController(server);
+        new HexHttpController(server);
 
         server.listen(config.port);
     }
 }
 
-new HexHttpServer();
+new HttpServer();
