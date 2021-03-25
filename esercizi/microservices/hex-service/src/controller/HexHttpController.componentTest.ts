@@ -53,3 +53,42 @@ describe('hex service REST API Test', () => {
         });
     });
 });
+
+describe('hex service REST API Test - edge cases', () => {
+    const url = process.env.npm_config_rgb2hex_test_url || `http://localhost:${config.port}`;
+    console.log('Test URL: ' + url);
+
+    it(`hexToRGB should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hexToRGB')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`hexToHSL should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hexToHSL')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`hexToCMYK should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hexToCMYK')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+});
+
