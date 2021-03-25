@@ -1,4 +1,4 @@
-import HttpController from './controller/HttpController';
+import CmykHttpController from './controller/CmykHttpController';
 import express from 'express';
 import * as config from '../server-config.json'
 
@@ -13,7 +13,7 @@ class HttpServer {
             next();
         });
 
-        new HttpController(server);
+        new CmykHttpController(server);
 
         server.listen(config.port);
     }
