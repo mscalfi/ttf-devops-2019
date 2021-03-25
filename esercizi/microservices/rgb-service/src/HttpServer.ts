@@ -1,4 +1,4 @@
-import HttpController from './controller/HttpController';
+import RgbHttpController from './controller/RgbHttpController';
 import express from 'express';
 import * as config from '../server-config.json'
 
@@ -13,7 +13,7 @@ class HttpServer {
             next();
         });
 
-        new HttpController(server);
+        new RgbHttpController(server);
 
         server.listen(config.port);
     }
