@@ -1,0 +1,11 @@
+version: '3'
+services:
+  hex-service:
+    build: hex-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hex-service.rule=PathPrefix(`/hex-service`)"
+      - "traefik.http.routers.hex-service.middlewares=hex-service-stripprefix"
+      - "traefik.http.services.hex-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.hex-service-stripprefix.stripprefix.prefixes=/hex-service"

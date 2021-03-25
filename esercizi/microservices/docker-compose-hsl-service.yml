@@ -1,0 +1,11 @@
+version: '3'
+services:
+  hsl-service:
+    build: hsl-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hsl-service.rule=PathPrefix(`/hsl-service`)"
+      - "traefik.http.routers.hsl-service.middlewares=hsl-service-stripprefix"
+      - "traefik.http.services.hsl-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.hsl-service-stripprefix.stripprefix.prefixes=/hsl-service"

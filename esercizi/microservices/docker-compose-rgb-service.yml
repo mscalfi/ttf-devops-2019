@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rgb-service:
+    build: rgb-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rgb-service.rule=PathPrefix(`/rgb-service`)"
+      - "traefik.http.routers.rgb-service.middlewares=rgb-service-stripprefix"
+      - "traefik.http.services.rgb-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.rgb-service-stripprefix.stripprefix.prefixes=/rgb-service"

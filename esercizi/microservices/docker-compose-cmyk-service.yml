@@ -1,0 +1,11 @@
+version: '3'
+services:
+  cmyk-service:
+    build: cmyk-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cmyk-service.rule=PathPrefix(`/cmyk-service`)"
+      - "traefik.http.routers.cmyk-service.middlewares=cmyk-service-stripprefix"
+      - "traefik.http.services.cmyk-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.cmyk-service-stripprefix.stripprefix.prefixes=/cmyk-service"
