@@ -53,3 +53,41 @@ describe('rgb service REST API Test', () => {
         });
     });
 });
+
+describe('rgb service REST API Test - edge cases', () => {
+    const url = process.env.npm_config_rgb2hex_test_url || `http://localhost:${config.port}`;
+    console.log('Test URL: ' + url);
+
+    it(`rgbToHEX should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/rgbToHEX')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`rgbToHSL should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/rgbToHSL')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`rgbToCMYK should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/rgbToCMYK')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+});
