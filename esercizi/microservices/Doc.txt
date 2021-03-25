@@ -3,24 +3,24 @@ docker-compose -f docker-compose-infrastructure.yml -f docker-compose-hex-servic
 
 I servizi sono così strutturati:
 hex-service:
-	- HEX -> RGB
-	- HEX -> HSL
-	- HEX -> CMYK
+	- HEX -> RGB (hexToRGB)
+	- HEX -> HSL (hexToHSL)
+	- HEX -> CMYK (hexToCMYK)
 
 rgb-service:
-	- RGB -> HEX
-	- RGB -> HSL 
-	- RGB -> CMYK
+	- RGB -> HEX (rgbToHEX)
+	- RGB -> HSL (rgbToHSL)
+	- RGB -> CMYK (rgbToCMYK)
 
 hsl-service:
-	- HSL -> HEX
-	- HSL -> RGB
-	- HSL -> CMYK
+	- HSL -> HEX (hslToHEX)
+	- HSL -> RGB (hslToRGB)
+	- HSL -> CMYK (hslToCMYK)
 
 cmyk-service:
-	- CMYK -> HEX
-	- CMYK -> RGB
-	- CMYK -> HSL
+	- CMYK -> HEX (cmykToHEX)
+	- CMYK -> RGB (cmykToRGB)
+	- CMYK -> HSL (cmykToHSL)
 
 Una volta fatto il compose, le chiamate rest sono disponibili agli indirizzi col formato
 
