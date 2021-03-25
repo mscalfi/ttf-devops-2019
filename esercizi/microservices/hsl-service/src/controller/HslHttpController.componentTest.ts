@@ -54,3 +54,42 @@ describe('hsl service REST API Test', () => {
         });
     });
 });
+
+describe('hsl service REST API Test - edge cases', () => {
+    const url = process.env.npm_config_rgb2hex_test_url || `http://localhost:${config.port}`;
+    console.log('Test URL: ' + url);
+
+    it(`hslToHex should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hslToHex')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`hslToRGB should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hslToRGB')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+
+    it(`hslToCMYK should return 400 with no color`, (done) => {
+        chai.request(url)
+            .get('/hslToCMYK')
+            .query(`color=`)
+            .end((err, res) => {
+                should.not.exist(err);
+                res.should.have.status(400);
+                done();
+            });
+    });
+});
+

@@ -5,24 +5,39 @@ import { hslToCMYK, hslToHex, hslToRGB } from '../service/HslService';
 class HslHttpController {
     constructor(server: Express) {
         server.get('/hslToHex', (req, res) => {
-            const color = JSON.parse(req.query.color as string) as TtfHsl;
-            const convertedColor: TtfHex = hslToHex(color);
+            const input = req.query.color;
+            if (!input) {
+                res.status(400).send("No 'color' param");
+            } else {
+                const color = JSON.parse(req.query.color as string) as TtfHsl;
+                const convertedColor: TtfHex = hslToHex(color);
 
-            res.send(convertedColor);
+                res.send(convertedColor);
+            }
         });
 
         server.get('/hslToRGB', (req, res) => {
-            const color = JSON.parse(req.query.color as string) as TtfHsl;
-            const convertedColor: TtfRgb = hslToRGB(color);
+            const input = req.query.color;
+            if (!input) {
+                res.status(400).send("No 'color' param");
+            } else {
+                const color = JSON.parse(input as string) as TtfHsl;
+                const convertedColor: TtfRgb = hslToRGB(color);
 
-            res.send(convertedColor);
+                res.send(convertedColor);
+            }
         });
 
         server.get('/hslToCMYK', (req, res) => {
-            const color = JSON.parse(req.query.color as string) as TtfHsl;
-            const convertedColor: TtfCmyk = hslToCMYK(color);
+            const input = req.query.color;
+            if (!input) {
+                res.status(400).send("No 'color' param");
+            } else {
+                const color = JSON.parse(input as string) as TtfHsl;
+                const convertedColor: TtfCmyk = hslToCMYK(color);
 
-            res.send(convertedColor);
+                res.send(convertedColor);
+            }
         });
     }
 }
