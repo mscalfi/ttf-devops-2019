@@ -1,0 +1,32 @@
+Comando compose con tutti i servizi:
+docker-compose -f docker-compose-infrastructure.yml -f docker-compose-hex-service.yml -f docker-compose-rgb-service.yml -f docker-compose-hsl-service.yml -f docker-compose-cmyk-service.yml up -d
+
+I servizi sono così strutturati:
+hex-service:
+	- HEX -> RGB
+	- HEX -> HSL
+	- HEX -> CMYK
+
+rgb-service:
+	- RGB -> HEX
+	- RGB -> HSL 
+	- RGB -> CMYK
+
+hsl-service:
+	- HSL -> HEX
+	- HSL -> RGB
+	- HSL -> CMYK
+
+cmyk-service:
+	- CMYK -> HEX
+	- CMYK -> RGB
+	- CMYK -> HSL
+
+Una volta fatto il compose, le chiamate rest sono disponibili agli indirizzi col formato
+
+vagrantbox.local/<nome-servizio>/<funzione>?color=<colore>
+
+ad esempio
+
+vagrantbox.local/cmyk-service/cmykToRGB?color={"cyan":0,"magenta":100,"yellow":75,"black":0}
+
