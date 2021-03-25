@@ -14,7 +14,7 @@ describe('hex service REST API Test', () => {
     hex2rgbTestData.forEach((test) => {
         it(`should convert via API ${JSON.stringify(test.hexValue)} to ${JSON.stringify(test.rgbValue)}`, (done) => {
             chai.request(url)
-                .get('/hex/toRGB')
+                .get('/hexToRGB')
                 .query(`color=${JSON.stringify(test.hexValue)}`)
                 .end((err, res) => {
                     should.not.exist(err);
@@ -28,7 +28,7 @@ describe('hex service REST API Test', () => {
     hex2hslTestData.forEach((test) => {
         it(`should convert via API ${JSON.stringify(test.hexValue)} to ${JSON.stringify(test.hslValue)}`, (done) => {
             chai.request(url)
-                .get('/hex/toHSL')
+                .get('/hexToHSL')
                 .query(`color=${JSON.stringify(test.hexValue)}`)
                 .end((err, res) => {
                     should.not.exist(err);
@@ -42,7 +42,7 @@ describe('hex service REST API Test', () => {
     hex2cmykTestData.forEach((test) => {
         it(`should convert via API ${JSON.stringify(test.hexValue)} to ${JSON.stringify(test.cmykValue)}`, (done) => {
             chai.request(url)
-                .get('/hex/toCMYK')
+                .get('/hexToCMYK')
                 .query(`color=${JSON.stringify(test.hexValue)}`)
                 .end((err, res) => {
                     should.not.exist(err);
