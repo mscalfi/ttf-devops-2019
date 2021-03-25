@@ -40,3 +40,23 @@ services:
       - "traefik.http.services.rgb-service.loadbalancer.server.port=3000"
       - "traefik.http.middlewares.rgb-service-stripprefix.stripprefix.prefixes=/rgb-service"
 
+  hsl-service:
+    build: hsl-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hsl-service.rule=PathPrefix(`/hsl-service`)"
+      - "traefik.http.routers.hsl-service.middlewares=hsl-service-stripprefix"
+      - "traefik.http.services.hsl-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.hsl-service-stripprefix.stripprefix.prefixes=/hsl-service"
+
+  cmyk-service:
+    build: cmyk-service
+    restart: "no"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cmyk-service.rule=PathPrefix(`/cmyk-service`)"
+      - "traefik.http.routers.cmyk-service.middlewares=cmyk-service-stripprefix"
+      - "traefik.http.services.cmyk-service.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.cmyk-service-stripprefix.stripprefix.prefixes=/cmyk-service"
+
