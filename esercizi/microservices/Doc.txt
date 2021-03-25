@@ -1,6 +1,10 @@
 Comando compose con tutti i servizi:
 docker-compose -f docker-compose-infrastructure.yml -f docker-compose-hex-service.yml -f docker-compose-rgb-service.yml -f docker-compose-hsl-service.yml -f docker-compose-cmyk-service.yml up -d
 
+da eseguire nella radice del progetto ovvero
+
+ttf-devops-2019\esercizi\microservices\
+
 docker-compose-infrastructure.yml contiene il reverse proxy
 gli altri file hanno formato
 
