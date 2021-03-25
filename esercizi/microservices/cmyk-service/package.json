@@ -1,13 +1,13 @@
 {
   "name": "cmyk-service",
   "version": "0.0.1",
-  "description": "This software is part of a micro-service architecture written for demonstration purposes.",
+  "description": "Conversions from the cymk color space",
   "keywords": [],
   "homepage": "",
   "license": "GPL-3.0",
   "author": {
-    "name": "Gianni Bombelli (bombo82)",
-    "email": "bombo82@giannibombelli.it"
+    "name": "Marco Scalfi",
+    "email": "marco.scalfi@protonmail.com"
   },
   "contributors": [],
   "main": "dist/cmyk-service/src/HttpServer.js",
