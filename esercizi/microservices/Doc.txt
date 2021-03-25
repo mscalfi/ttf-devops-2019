@@ -1,7 +1,17 @@
 Comando compose con tutti i servizi:
 docker-compose -f docker-compose-infrastructure.yml -f docker-compose-hex-service.yml -f docker-compose-rgb-service.yml -f docker-compose-hsl-service.yml -f docker-compose-cmyk-service.yml up -d
 
-I servizi sono così strutturati:
+docker-compose-infrastructure.yml contiene il reverse proxy
+gli altri file hanno formato
+
+docker-compose-<nome-servizio>.yml 
+
+e contengono quel servizio.
+
+Sono stati separati i vari servizi in vari file in modo da poter decidere quali conversioni implementare.
+
+I servizi sono così strutturati. 
+Nelle parentesi è il nome dell'endpoint per quella funzionalità
 hex-service:
 	- HEX -> RGB (hexToRGB)
 	- HEX -> HSL (hexToHSL)
