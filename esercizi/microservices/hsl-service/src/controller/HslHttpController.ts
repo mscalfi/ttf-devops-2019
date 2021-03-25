@@ -4,7 +4,7 @@ import { hslToCMYK, hslToHex, hslToRGB } from '../service/HslService';
 
 class HslHttpController {
     constructor(server: Express) {
-        server.get('/hslToHex', (req, res) => {
+        server.get('/hslToHEX', (req, res) => {
             const input = req.query.color;
             if (!input) {
                 res.status(400).send("No 'color' param");

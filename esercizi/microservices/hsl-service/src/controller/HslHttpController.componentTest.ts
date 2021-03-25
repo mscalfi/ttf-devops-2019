@@ -15,7 +15,7 @@ describe('hsl service REST API Test', () => {
     hsl2hexTestData.forEach((test) => {
         it(`should convert via API ${JSON.stringify(test.hslValue)} to ${JSON.stringify(test.hexValue)}`, (done) => {
             chai.request(url)
-                .get('/hslToHex')
+                .get('/hslToHEX')
                 .query(`color=${JSON.stringify(test.hslValue)}`)
                 .end((err, res) => {
                     should.not.exist(err);
@@ -61,7 +61,7 @@ describe('hsl service REST API Test - edge cases', () => {
 
     it(`hslToHex should return 400 with no color`, (done) => {
         chai.request(url)
-            .get('/hslToHex')
+            .get('/hslToHEX')
             .query(`color=`)
             .end((err, res) => {
                 should.not.exist(err);
