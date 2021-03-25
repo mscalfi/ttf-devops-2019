@@ -1,6 +1,6 @@
 # Tech Talent Factory - DevOps Class 2020
 
-L'esericzio verrà svolto individualmente
+L'esercizio verrà svolto individualmente
 
 ## Visione del Prodotto
 Creare un convertitore di spazio colore tra i seguenti formati: HEX, RGB, HSL e CMYK. Il prodotto deve poter convertire
