@@ -1,4 +1,4 @@
-import HttpController from './controller/HttpController';
+import HslHttpController from './controller/HslHttpController';
 import express from 'express';
 import * as config from '../server-config.json'
 
@@ -13,7 +13,7 @@ class HttpServer {
             next();
         });
 
-        new HttpController(server);
+        new HslHttpController(server);
 
         server.listen(config.port);
     }
