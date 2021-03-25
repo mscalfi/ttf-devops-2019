@@ -1,7 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { hsl2hexTestData, hsl2rgbTestData, hsl2cmykTestData } from "../../../commons/src/test-data/colors"
-import { TtfCmyk, TtfHex, TtfRgb } from '../../../commons/src/model/Color';
 import * as config from '../../server-config.json'
 
 chai.config.includeStack = true;

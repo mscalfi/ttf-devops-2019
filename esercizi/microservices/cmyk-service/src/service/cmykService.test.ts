@@ -1,7 +1,7 @@
 import chai from 'chai';
 import { cmykToHEX, cmykToRGB, cmykToHSL } from './cmykService';
 import { cmyk2hexTestData, cmyk2rgbTestData, cmyk2hslTestData } from "../../../commons/src/test-data/colors"
-import { TtfCmyk, TtfHex, TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
+import { TtfHex, TtfHsl, TtfRgb } from '../../../commons/src/model/Color';
 chai.config.includeStack = true;
 const should = chai.should();
 
